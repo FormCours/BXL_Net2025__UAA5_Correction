@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="init-db.sql" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="WebAPI_UAA5/WebAPI_UAA5.csproj" />
+</Solution>
