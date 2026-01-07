@@ -74,7 +74,7 @@ INSERT INTO [training_course] ([id], [name], [short_desc], [full_desc], [image],
         (3, 'Cybersécurité', 'Sécurisation des réseaux', 'Introduction aux concepts de sécurité, firewall et tests d''intrusion.', 'cyber_secu.png', 'thumb_secu.png', 60),
         (4, 'UX/UI Designer', 'Conception d''interfaces', 'Création de maquettes et prototypes centrés utilisateur.', 'ux_ui.png', 'thumb_designer.png', 30),
         (5, 'Marketing Digital', 'SEO et Réseaux sociaux', 'Stratégie de communication digitale et analyse d''audience.', 'marketing.png', 'thumb_marketing.png', 15),
-        (6, 'Développement IA', 'Conception et entraînement de modèles d''apprentissage automatique', 'Utilisation de Python et de frameworks comme TensorFlow pour l''IA et le Machine Learning.', 'ia_dev.jpg', NULL, 75);
+        (6, 'Développement IA', 'Conception et entraînement de modèles d''apprentissage automatique', 'Utilisation de Python et de frameworks comme TensorFlow pour l''IA et le Machine Learning.', 'ia_dev.png', NULL, 75);
 SET IDENTITY_INSERT [training_course] OFF;
 GO
 
