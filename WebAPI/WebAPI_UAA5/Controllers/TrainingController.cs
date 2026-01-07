@@ -113,9 +113,31 @@ namespace WebAPI_UAA5.Controllers
 
 
         [HttpGet("{id}/participant")]
+        [ProducesResponseType<InfoSessionItemResponseDto[]>(200)]
+        [ProducesResponseType(404)]
         public IActionResult GetParticipant(int id)
         {
-            throw new NotImplementedException();
+            // Test de garde
+            TrainingSession? session = _trainingService.GetSessionById(id);
+            if(session is null)
+            {
+                // Envois d'une réponse 404
+                return NotFound();
+            }
+
+            // Récuperation des données depuis la base de donnée via le service
+            IEnumerable<InfoSessionRegistration> participants = _infoSessionService.GetParticipants(id);
+
+            // Transformation sous forme de DTO
+            IEnumerable<InfoSessionItemResponseDto> result = participants.Select(participant => new InfoSessionItemResponseDto()
+            {
+                Id = participant.Id,
+                Email = participant.Email,
+                RegistrationDate = participant.RegistrationDate ?? throw new Exception("RegistrationDate is null !!!")
+            });
+
+            // Envois d'une réponse 200 avec les données
+            return Ok(result);
         }
     }
 }

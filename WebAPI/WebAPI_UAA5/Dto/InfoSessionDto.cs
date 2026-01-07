@@ -18,4 +18,11 @@ namespace WebAPI_UAA5.Dto
         public required DateTime? RegistrationDate { get; set; }
         public required int TrainingSessionId { get; set; }
     }
+
+    public class InfoSessionItemResponseDto
+    {
+        public required int Id { get; set; }
+        public required string Email { get; set; }
+        public required DateTime RegistrationDate { get; set; }
+    }
 }
