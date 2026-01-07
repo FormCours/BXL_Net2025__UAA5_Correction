@@ -5,20 +5,24 @@ import FormationsPage from './pages/formation/FormationsPage'
 import FormationDetailPage from './pages/formation/FormationDetail'
 import AboutPage from './pages/about/AboutPage'
 import NotFoundPage from './pages/error/NotFoundPage'
+import Header from './ui/Header/Header'
 
 function App() {
 
   return (
     <>
-      <Routes>
-        <Route index element={<HomePage />} />
-        <Route path='formation'>
-          <Route index element={<FormationsPage />} />
-          <Route path=':id' element={<FormationDetailPage />} />
-        </Route>
-        <Route path='about' element={<AboutPage />} />
-        <Route path='*' element={<NotFoundPage />} />
-      </Routes>
+      <Header />
+      <main>
+        <Routes>
+          <Route index element={<HomePage />} />
+          <Route path='formation'>
+            <Route index element={<FormationsPage />} />
+            <Route path=':id' element={<FormationDetailPage />} />
+          </Route>
+          <Route path='about' element={<AboutPage />} />
+          <Route path='*' element={<NotFoundPage />} />
+        </Routes>
+      </main>
     </>
   )
 }

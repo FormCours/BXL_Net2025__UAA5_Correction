@@ -2,7 +2,7 @@ export default function FormationDetailPage() {
 
     return (
         <>
-            <h1>Detail d'une formation</h1>
+            <h2>Detail d'une formation</h2>
         </>
     )
 }

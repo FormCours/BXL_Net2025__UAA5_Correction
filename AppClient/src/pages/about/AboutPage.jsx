@@ -2,7 +2,7 @@ export default function AboutPage() {
 
     return (
         <>
-            <h1>À Propos</h1>
+            <h2>À Propos</h2>
         </>
     )
 }

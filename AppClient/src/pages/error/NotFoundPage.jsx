@@ -2,7 +2,7 @@ export default function NotFoundPage() {
 
     return (
         <>
-            <h1>Perdu ?</h1>
+            <h2>Perdu ?</h2>
             <p>Ne paniquez pas, vous êtes ici → ○</p>
         </>
     )

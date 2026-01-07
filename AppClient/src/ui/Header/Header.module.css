@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    gap: 3ch;
+    padding: 1ch;
+
+    border-bottom: solid 0.05ch deepskyblue;
+}
+
+.header h1 {
+    margin: 0;
+    color: deepskyblue;
+}
+
+.header nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5ch;
+    list-style: none;
+    padding: 0;
+}
+
+.header nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.header nav ul li a:global(.active) {
+    /* Le mot clef ':global' permet de conserver le nom de la classe sans que le "CSS module" ne le modifie */
+    color: darkturquoise;
+}
