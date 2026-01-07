@@ -1,8 +1,11 @@
+import FormationListing from '../../features/Formation/FormationListing';
+
 export default function FormationsPage() {
 
     return (
         <>
-            <h2>Liste des formations</h2>
+            <h2>Listing des formations</h2>
+            <FormationListing />
         </>
     )
 }
