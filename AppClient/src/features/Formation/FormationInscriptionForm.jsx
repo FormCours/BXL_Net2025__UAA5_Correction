@@ -18,7 +18,12 @@ export default function FormationInscriptionForm({ id }) {
         const result = await sendIncriptionToFormation(id, data);
 
         // Affichage d'un toast
-        toast('Votre inscription a bien été reçu. Merci ❤️‍🔥');
+        if(result.success) {
+            toast.success('Votre inscription a bien été reçu. Merci ❤️‍🔥');
+        }
+        else {
+            toast.warning(result.error)
+        }
 
         return state;
     };

@@ -5,13 +5,31 @@ export async function getListingFormation() {
         baseURL: 'https://localhost:7159/api'
     });
 
-    return data;
+    return {
+        success: true,
+        data
+    };
 }
 
 export async function sendIncriptionToFormation(id, registerData) {
-    const response = await axios.post(`/training/${id}/participant`, registerData, {
-        baseURL: 'https://localhost:7159/api'
-    });
+    let response;
 
-    return response.data;
+    try {
+        response = await axios.post(`/training/${id}/participant`, registerData, {
+            baseURL: 'https://localhost:7159/api'
+        });
+    }
+    catch (error) {
+        const msg = error.response.data?.detail;
+        
+        return {
+            success: false,
+            error: msg ?? error.message
+        }
+    }
+
+    return {
+        success: true,
+        data: response.data
+    };
 }

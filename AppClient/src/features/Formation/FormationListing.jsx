@@ -18,9 +18,9 @@ export default function FormationListing() {
 function FormationListingContent({ promise }) {
 
     // ↓ Traiter les données de le promesse resolu !
-    const data = use(promise);
+    const result = use(promise);
 
     return (
-        <FormationList formationData={data} />
+        <FormationList formationData={result.data} />
     );
 }

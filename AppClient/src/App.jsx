@@ -14,7 +14,7 @@ function App() {
     <>
       <Header />
       <main>
-        <Toaster />
+        <Toaster richColors />
         <Routes>
           <Route index element={<HomePage />} />
           <Route path='formation'>
