@@ -6,6 +6,7 @@ import FormationDetailPage from './pages/formation/FormationDetailPage'
 import AboutPage from './pages/about/AboutPage'
 import NotFoundPage from './pages/error/NotFoundPage'
 import Header from './ui/Header/Header'
+import { Toaster } from 'sonner'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
     <>
       <Header />
       <main>
+        <Toaster />
         <Routes>
           <Route index element={<HomePage />} />
           <Route path='formation'>

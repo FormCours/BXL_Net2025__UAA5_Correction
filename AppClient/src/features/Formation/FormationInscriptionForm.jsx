@@ -1,5 +1,6 @@
 import { useActionState } from 'react';
 import { sendIncriptionToFormation } from '../../services/formation.service';
+import { toast } from 'sonner';
 
 export default function FormationInscriptionForm({ id }) {
     
@@ -14,7 +15,10 @@ export default function FormationInscriptionForm({ id }) {
         // TODO Validation des données (zod)
 
         // Requete vers la WebAPI via les services
-        const result = await sendIncriptionToFormation(id, data)
+        const result = await sendIncriptionToFormation(id, data);
+
+        // Affichage d'un toast
+        toast('Votre inscription a bien été reçu. Merci ❤️‍🔥');
 
         return state;
     };
