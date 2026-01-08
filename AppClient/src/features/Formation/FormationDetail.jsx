@@ -17,10 +17,13 @@ export default function FormationDetail({ id }) {
 
     return (
         <div>
-            { isLoading ? (
+            {isLoading ? (
                 <p>Chargement en cours...</p>
             ) : data ? (
-                <p>{data.formation} - {data.location}</p>
+                <>
+                    <p>{data.formation} - {data.location}</p>
+                    <img src={import.meta.env.VITE_IMG_URL + data.imageUrl} alt={'Image de ' + data.formation} />
+                </>
             ) : error && (
                 <p>Une erreur est survenu lors du chargement des données !</p>
             )}

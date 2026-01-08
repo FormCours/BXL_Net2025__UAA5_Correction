@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export async function getListingFormation() {
     const { data } = await axios.get('/training', {
-        baseURL: 'https://localhost:7159/api'
+        baseURL: import.meta.env.VITE_API_URL
     });
 
     return {
@@ -16,7 +16,7 @@ export async function getFormationById(id) {
 
     try {
         response = await axios.get(`/training/${id}` , {
-            baseURL: 'https://localhost:7159/api'
+            baseURL: import.meta.env.VITE_API_URL
         });
     }
     catch (error) {
@@ -37,7 +37,7 @@ export async function sendIncriptionToFormation(id, registerData) {
 
     try {
         response = await axios.post(`/training/${id}/participant`, registerData, {
-            baseURL: 'https://localhost:7159/api'
+            baseURL: import.meta.env.VITE_API_URL
         });
     }
     catch (error) {
