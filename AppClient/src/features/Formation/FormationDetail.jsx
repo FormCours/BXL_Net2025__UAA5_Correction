@@ -1,9 +1,29 @@
+import useSWR from 'swr'
+import { getFormationById } from '../../services/formation.service'
 
-export default function FormationDetail({id}) {
+const fetcher = (id) => {
+    return getFormationById(id).then(res => {
+        if (!res.success)
+            throw new Error(res.error);
 
-    // TODO Charger les données avec une requete
+        return res.data;
+    })
+}
+
+export default function FormationDetail({ id }) {
+
+    // Charger les données avec une requete
+    const { isLoading, data, error } = useSWR(`training-${id}`, () => fetcher(id));
 
     return (
-        <p>Prochainement ici les informations de la formation...</p>
+        <div>
+            { isLoading ? (
+                <p>Chargement en cours...</p>
+            ) : data ? (
+                <p>{data.formation} - {data.location}</p>
+            ) : error && (
+                <p>Une erreur est survenu lors du chargement des données !</p>
+            )}
+        </div>
     )
 }
